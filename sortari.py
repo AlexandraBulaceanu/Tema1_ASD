@@ -104,6 +104,8 @@ def quicksort(a, maxx):
     more = quicksort(more, maxx)
     less.extend(equal)
     less.extend(more)
+    a = []
+    a.extend(less)
     return less
 
 def nrcifreMaxi(n):
@@ -130,6 +132,7 @@ def radixsort_baza10(a, maxx):
     return listsor
 
 
+#cu counting_sort ca baza
 def counting_sort(a, digit):
 
     listsor = [0]*len(a)
@@ -177,7 +180,8 @@ for el in range(tests):
         cop = a.copy()
         sortare(cop, maxx)
         print("sortarea ", sortsname[index], " a durat " "--- %s seconds ---" % (time.time() - start_time))
-        #print("sortarea a fost corecta: ",validitatesortare(a,cop))
+        print("sortarea a fost corecta: ",validitatesortare(a,cop))
         index=index+1
+        a = cop.copy()
 
 
